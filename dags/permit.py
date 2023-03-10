@@ -10,13 +10,13 @@ from airflow.operators.python import PythonOperator
 
 
 def print_hello():
-    print("hello de nuevo miguel")
+    print("Ejecutar Araña Permit")
 
 
 with DAG(
-    dag_id="pythonoperator",
-    description="utilizando python operator",
+    dag_id="Permit",
+    description="llamar a servicio de arañas permit",
     schedule_interval="@once",
     start_date=datetime(2023, 3, 9),
 ) as dag:
-    op = PythonOperator(task_id="Hello_with_python", python_callable=print_hello)
+    op = PythonOperator(task_id="permit_spider", python_callable=print_hello)
